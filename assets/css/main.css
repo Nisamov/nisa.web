@@ -1,0 +1,501 @@
+/* ===== RESET Y BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Monospace';
+    src: local('Courier New'), local('Monaco'), local('Menlo'), local('Consolas'), monospace;
+}
+
+body {
+    font-family: 'Monospace', monospace;
+    background: #000000;
+    color: #ffffff;
+    line-height: 1.6;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== CONTAINER PRINCIPAL ===== */
+.server-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    min-height: 100vh;
+    background: #000000;
+}
+
+/* ===== HEADER DEL SERVIDOR ===== */
+.server-header {
+    padding: 15px 0;
+    border-bottom: 1px solid #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.server-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.server-name {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.server-status {
+    color: #00ff00;
+    font-size: 12px;
+    background: #1a3c1a;
+    padding: 2px 8px;
+    border-radius: 3px;
+}
+
+.server-stats {
+    display: flex;
+    gap: 20px;
+    font-size: 12px;
+    color: #888;
+}
+
+.stat {
+    font-family: 'Monospace', monospace;
+}
+
+/* ===== SECCIONES DEL TERMINAL ===== */
+.server-content {
+    padding-bottom: 50px;
+}
+
+.terminal-section {
+    margin-bottom: 40px;
+    border-bottom: 1px solid #222;
+    padding-bottom: 30px;
+}
+
+.terminal-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.terminal-line {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.prompt {
+    color: #00ff00;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.command {
+    color: #ffffff;
+}
+
+.terminal-output {
+    margin-left: 20px;
+}
+
+/* ===== ASCII BANNER ===== */
+.ascii-banner {
+    color: #ffffff;
+    font-size: 12px;
+    line-height: 1.2;
+    margin: 15px 0 25px;
+    font-family: 'Monospace', monospace;
+    letter-spacing: 1px;
+}
+
+.server-message {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.server-subtitle {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+/* ===== SECCIONES DE INFORMACIÓN ===== */
+.section-title {
+    color: #ffffff;
+    font-size: 16px;
+    margin: 20px 0 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+}
+
+.subsection-title {
+    color: #ffffff;
+    font-size: 14px;
+    margin: 20px 0 10px;
+    font-weight: bold;
+}
+
+/* ===== GRID DE INFORMACIÓN ===== */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.info-item {
+    display: flex;
+    gap: 10px;
+}
+
+.info-label {
+    color: #888;
+    min-width: 80px;
+}
+
+.info-value {
+    color: #ffffff;
+}
+
+.info-value.active {
+    color: #00ff00;
+    background: #1a3c1a;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.description {
+    color: #ccc;
+    line-height: 1.6;
+    margin: 15px 0;
+}
+
+/* ===== LISTAS ===== */
+.interests-list {
+    list-style: none;
+    margin: 15px 0;
+}
+
+.interests-list li {
+    color: #ccc;
+    padding: 5px 0;
+    position: relative;
+    padding-left: 20px;
+}
+
+.interests-list li:before {
+    content: ">";
+    color: #888;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* ===== PROYECTOS ===== */
+.project {
+    background: #0a0a0a;
+    border: 1px solid #222;
+    padding: 20px;
+    margin: 20px 0;
+    border-left: 4px solid #333;
+}
+
+.project:hover {
+    border-left-color: #666;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.project-name {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.project-date {
+    color: #888;
+    font-size: 12px;
+}
+
+.project-description {
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.project-tech {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.tech-tag {
+    background: #222;
+    color: #888;
+    padding: 4px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-family: 'Monospace', monospace;
+}
+
+.project-link a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 13px;
+    display: inline-block;
+    border-bottom: 1px solid #333;
+    padding-bottom: 2px;
+}
+
+.project-link a:hover {
+    color: #ffffff;
+    border-bottom-color: #666;
+}
+
+.all-projects {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #222;
+    color: #888;
+}
+
+.all-projects a {
+    color: #ccc;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.all-projects a:hover {
+    color: #ffffff;
+}
+
+/* ===== HABILIDADES ===== */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.skill-category {
+    background: #0a0a0a;
+    border: 1px solid #222;
+    padding: 20px;
+}
+
+.category-title {
+    color: #ffffff;
+    font-size: 14px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+}
+
+.skill-list {
+    list-style: none;
+}
+
+.skill-list li {
+    color: #ccc;
+    padding: 5px 0;
+    position: relative;
+    padding-left: 15px;
+}
+
+.skill-list li:before {
+    content: "-";
+    color: #666;
+    position: absolute;
+    left: 0;
+}
+
+/* ===== CONTACTO ===== */
+.connections-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.connection {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background: #0a0a0a;
+    border: 1px solid #222;
+}
+
+.conn-label {
+    color: #888;
+    min-width: 100px;
+    font-size: 13px;
+}
+
+.conn-link {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 13px;
+    flex: 1;
+}
+
+.conn-link:hover {
+    color: #ffffff;
+}
+
+.contact-note {
+    margin-top: 20px;
+    padding: 15px;
+    background: #111;
+    border: 1px solid #222;
+    color: #888;
+    font-size: 13px;
+}
+
+/* ===== FOOTER ===== */
+.server-footer {
+    color: #888;
+    font-size: 12px;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.copyright {
+    color: #666;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #222;
+}
+
+/* ===== EFECTOS DE TEXTO ===== */
+a {
+    transition: color 0.2s ease;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .server-container {
+        padding: 0 15px;
+    }
+    
+    .server-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .server-stats {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .ascii-banner {
+        font-size: 8px;
+    }
+    
+    .server-message {
+        font-size: 16px;
+    }
+    
+    .info-grid,
+    .skills-grid,
+    .connections-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .connection {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .conn-label {
+        min-width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
+    
+    .section-title {
+        font-size: 14px;
+    }
+    
+    .project {
+        padding: 15px;
+    }
+    
+    .skill-category {
+        padding: 15px;
+    }
+}
+
+/* ===== SCROLLBAR PERSONALIZADA ===== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #444;
+}
+
+/* ===== ANIMACIONES ===== */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.blink {
+    animation: blink 1s infinite;
+}
+
+/* ===== SELECTION ===== */
+::selection {
+    background: #333;
+    color: #ffffff;
+}
+
+::-moz-selection {
+    background: #333;
+    color: #ffffff;
+}

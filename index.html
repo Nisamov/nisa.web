@@ -1,37 +1,288 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Inicio | Nisamov</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Nisamov - SysAdmin & Linux Specialist">
+    <meta name="keywords" content="Linux, SysAdmin, Terminal, Sistemas, DevOps">
+    <meta name="author" content="Nisamov">
+    <title>nisamov@server:~</title>
+    
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="icon" href="assets/img/logo.ico" type="image/x-icon">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Nisamov - SysAdmin & Linux Specialist">
+    <meta property="og:description" content="Portfolio técnico - Especialista en Linux y Sistemas">
+    <meta property="og:type" content="website">
 </head>
 <body>
-<header class="header">
-  <div class="logo">Nisamov</div>
-  <nav class="nav">
-    <a href="index.html" class="active">Inicio</a>
-    <a href="sobre.html">Sobre mí</a>
-    <a href="desarrollo.html">Desarrollo</a>
-    <a href="certificacion.html">Certificación</a>
-    <a href="curriculum.html">Currículum</a>
-  </nav>
-</header>
+    <div class="server-container">
+        <!-- Header del servidor -->
+        <div class="server-header">
+            <div class="server-info">
+                <span class="server-name">nisamov@server</span>
+                <span class="server-status">● ONLINE</span>
+            </div>
+            <div class="server-stats">
+                <span class="stat">CPU: 12%</span>
+                <span class="stat">RAM: 34%</span>
+                <span class="stat">UPTIME: 15d 7h</span>
+            </div>
+        </div>
 
-  <section class="hero fullpage">
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <h1>Web personal | <span class="highlight">Nisamov</span></h1>
-      <p class="subtitle">Técnico en Sistemas Informáticos y Redes</p>
-      <p class="secondary">Web personal.</p>
-      <a href="curriculum.html" class="btn-neon">Ver Currículum</a>
+        <!-- Contenido principal -->
+        <main class="server-content">
+            <!-- Sección de bienvenida -->
+            <section class="terminal-section">
+                <div class="terminal-line">
+                    <span class="prompt">nisamov@server:~$</span>
+                    <span class="command">cat /etc/motd</span>
+                </div>
+                <div class="terminal-output">
+                    <pre class="ascii-banner">
+ /$$   /$$ /$$                                                       
+| $$$ | $$|__/                                                       
+| $$$$| $$ /$$  /$$$$$$$  /$$$$$$  /$$$$$$/$$$$   /$$$$$$  /$$    /$$
+| $$ $$ $$| $$ /$$_____/ |____  $$| $$_  $$_  $$ /$$__  $$|  $$  /$$/
+| $$  $$$$| $$|  $$$$$$   /$$$$$$$| $$ \ $$ \ $$| $$  \ $$ \  $$/$$/ 
+| $$\  $$$| $$ \____  $$ /$$__  $$| $$ | $$ | $$| $$  | $$  \  $$$/  
+| $$ \  $$| $$ /$$$$$$$/|  $$$$$$$| $$ | $$ | $$|  $$$$$$/   \  $/   
+|__/  \__/|__/|_______/  \_______/|__/ |__/ |__/ \______/     \_/    
+                    </pre>
+                    <p class="server-message">Custom Shell / N_OS</p>
+                    <p class="server-subtitle">SysAdmin | Linux Specialist | Network Engineer</p>
+                </div>
+            </section>
+
+            <!-- Información personal -->
+            <section class="terminal-section">
+                <div class="terminal-line">
+                    <span class="prompt">nisamov@server:~$</span>
+                    <span class="command">whoami</span>
+                </div>
+                <div class="terminal-output">
+                    <h3 class="section-title">INFORMACIÓN DEL USUARIO</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">USUARIO:</span>
+                            <span class="info-value">Nisamov</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">ROLES:</span>
+                            <span class="info-value">SysAdmin</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">UBICACIÓN:</span>
+                            <span class="info-value">España</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">STATUS:</span>
+                            <span class="info-value active">ACTIVE</span>
+                        </div>
+                    </div>
+                    
+                    <h4 class="subsection-title">DESCRIPCIÓN</h4>
+                    <p class="description">
+                        Técnico especializado en Sistemas Informáticos y Redes, actualmente cursando ASIR. 
+                        Apasionado por la administración de sistemas Linux, redes y automatización de infraestructuras.
+                    </p>
+                    
+                    <h4 class="subsection-title">INTERESES PRINCIPALES</h4>
+                    <ul class="interests-list">
+                        <li>Administración de Sistemas Linux (Debian/Ubuntu, RHEL)</li>
+                        <li>Bases de Datos: MySQL</li>
+                        <li>Redes y Comunicaciones</li>
+                        <li>Scripting y Automatización</li>
+                        <li>Virtualización y Contenedores</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Proyectos -->
+            <section class="terminal-section">
+                <div class="terminal-line">
+                    <span class="prompt">nisamov@server:~$</span>
+                    <span class="command">ls -la /repos/</span>
+                </div>
+                <div class="terminal-output">
+                    <h3 class="section-title">REPOSITORIOS DESTACADOS</h3>
+                    
+                    <div class="project">
+                        <div class="project-header">
+                            <span class="project-name">LinuxCommands</span>
+                            <span class="project-date">Última modificación: 2024-01-15</span>
+                        </div>
+                        <div class="project-description">
+                            Repositorio completo de comandos Linux para administradores de sistemas.
+                            Documentación técnica organizada por categorías con ejemplos prácticos.
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">BASH</span>
+                            <span class="tech-tag">LINUX</span>
+                            <span class="tech-tag">DOCUMENTATION</span>
+                        </div>
+                        <div class="project-link">
+                            <a href="https://github.com/Nisamov/LinuxCommands" target="_blank">
+                                https://github.com/Nisamov/LinuxCommands
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="project">
+                        <div class="project-header">
+                            <span class="project-name">RouterSwitchCommands</span>
+                            <span class="project-date">Última modificación: 2024-01-10</span>
+                        </div>
+                        <div class="project-description">
+                            Guía de comandos para routers y switches Cisco.
+                            Configuración de redes, troubleshooting y mejores prácticas.
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">NETWORKING</span>
+                            <span class="tech-tag">CISCO</span>
+                            <span class="tech-tag">ROUTING</span>
+                            <span class="tech-tag">SWITCHING</span>
+                        </div>
+                        <div class="project-link">
+                            <a href="https://github.com/Nisamov/RouterSwitchCommands" target="_blank">
+                                https://github.com/Nisamov/RouterSwitchCommands
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="all-projects">
+                        <span>Ver todos los repositorios:</span>
+                        <a href="https://github.com/Nisamov" target="_blank">https://github.com/Nisamov</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Habilidades -->
+            <section class="terminal-section">
+                <div class="terminal-line">
+                    <span class="prompt">nisamov@server:~$</span>
+                    <span class="command">cat /proc/skills</span>
+                </div>
+                <div class="terminal-output">
+                    <h3 class="section-title">HABILIDADES TÉCNICAS</h3>
+                    
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4 class="category-title">SISTEMAS OPERATIVOS</h4>
+                            <ul class="skill-list">
+                                <li>Linux (Debian/Ubuntu, RHEL/CentOS)</li>
+                                <li>Windows Server</li>
+                                <li>Administración de Servidores</li>
+                                <li>Shell Scripting (Bash)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4 class="category-title">REDES</h4>
+                            <ul class="skill-list">
+                                <li>Protocolos TCP/IP</li>
+                                <li>Routing y Switching</li>
+                                <li>Firewalls (iptables, firewalld)</li>
+                                <li>DNS, DHCP, VPN</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4 class="category-title">BASES DE DATOS</h4>
+                            <ul class="skill-list">
+                                <li>MySQL/MariaDB</li>
+                                <li>PostgreSQL</li>
+                                <li>Administración y Backup</li>
+                                <li>Optimización de consultas</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4 class="category-title">HERRAMIENTAS</h4>
+                            <ul class="skill-list">
+                                <li>Docker</li>
+                                <li>Git</li>
+                                <li>SSH</li>
+                                <li>Monitorización (top, htop, netstat)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contacto -->
+            <section class="terminal-section">
+                <div class="terminal-line">
+                    <span class="prompt">nisamov@server:~$</span>
+                    <span class="command">netstat -tulpn | grep ESTABLISHED</span>
+                </div>
+                <div class="terminal-output">
+                    <h3 class="section-title">CONEXIONES ACTIVAS</h3>
+                    
+                    <div class="connections-grid">
+                        <div class="connection">
+                            <span class="conn-label">GITHUB:</span>
+                            <a href="https://github.com/Nisamov" target="_blank" class="conn-link">
+                                https://github.com/Nisamov
+                            </a>
+                        </div>
+                        
+                        <div class="connection">
+                            <span class="conn-label">X/TWITTER:</span>
+                            <a href="https://twitter.com/Nisamov_" target="_blank" class="conn-link">
+                                @Nisamov_
+                            </a>
+                        </div>
+                        
+                        <div class="connection">
+                            <span class="conn-label">LINKEDIN:</span>
+                            <a href="https://linkedin.com/in/Nisamov" target="_blank" class="conn-link">
+                                in/Nisamov
+                            </a>
+                        </div>
+                        
+                        <div class="connection">
+                            <span class="conn-label">CREDLY:</span>
+                            <a href="https://www.credly.com/users/nisamov" target="_blank" class="conn-link">
+                                credly.com/users/nisamov
+                            </a>
+                        </div>
+                        
+                        <div class="connection">
+                            <span class="conn-label">LAUNCHPAD:</span>
+                            <a href="https://launchpad.net/~andresabadias" target="_blank" class="conn-link">
+                                launchpad.net/~andresabadias
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-note">
+                        <span>Para contactar profesionalmente, consultar perfiles en GitHub o LinkedIn.</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <section class="terminal-section">
+                <div class="terminal-line">
+                    <span class="prompt">nisamov@server:~$</span>
+                    <span class="command">uptime</span>
+                </div>
+                <div class="terminal-output">
+                    <div class="server-footer">
+                        <span>system uptime: 15 days, 7 hours, 23 minutes</span>
+                        <span>load average: 0.12, 0.08, 0.05</span>
+                        <span>last login: Today from terminal</span>
+                    </div>
+                    <div class="copyright">
+                        &copy; 2026 Nisamov. Todos los derechos reservados.
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
-  </section>
 
-  <footer>
-    <p>&copy; 2026 Nisamov</p>
-  </footer>
-
-  <script src="script.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
