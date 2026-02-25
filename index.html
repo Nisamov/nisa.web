@@ -3,286 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio de Nisamov - SysAdmin & Linux Specialist">
-    <meta name="keywords" content="Linux, SysAdmin, Terminal, Sistemas, DevOps">
-    <meta name="author" content="Nisamov">
-    <title>nisamov@server:~</title>
-    
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="icon" href="assets/img/logo.ico" type="image/x-icon">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="Nisamov - SysAdmin & Linux Specialist">
-    <meta property="og:description" content="Portfolio técnico - Especialista en Linux y Sistemas">
-    <meta property="og:type" content="website">
+    <title>Nisamov | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        :root {
+            --gh-border: #d0d7de;
+            --gh-blue: #0969da;
+        }
+        .bento-card {
+            background: white;
+            border: 1px solid var(--gh-border);
+            border-radius: 8px;
+            padding: 24px;
+            transition: all 0.3s ease;
+        }
+        .bento-card:hover {
+            box-shadow: 0 8px 24px rgba(149, 157, 165, 0.2);
+        }
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 0;
+            color: #444c56;
+            font-size: 0.85rem;
+            transition: color 0.2s;
+        }
+        .social-link:hover { color: var(--gh-blue); }
+        .sidebar-sticky { position: sticky; top: 2rem; }
+
+        /* Estilos para el Expositor */
+        .carousel-container {
+            position: relative;
+            height: 400px; /* Altura ajustada para reducir espacio sobrante */
+            overflow: hidden;
+        }
+        .carousel-item {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+            pointer-events: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .carousel-item.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
 </head>
-<body>
-    <div class="server-container">
-        <!-- Header del servidor -->
-        <div class="server-header">
-            <div class="server-info">
-                <span class="server-name">nisamov@server</span>
-                <span class="server-status">● ONLINE</span>
-            </div>
-            <div class="server-stats">
-                <span class="stat">CPU: 12%</span>
-                <span class="stat">RAM: 34%</span>
-                <span class="stat">UPTIME: 15d 7h</span>
-            </div>
+<body class="p-4 md:p-10 bg-white">
+
+    <div class="max-w-7xl mx-auto">
+        
+        <div class="w-full mb-8 rounded-xl overflow-hidden border border-gray-200 shadow-sm bg-gray-50">
+            <img src="assets/img/nsm.gif" 
+                 class="w-full h-auto block" alt="Banner Animado">
         </div>
 
-        <!-- Contenido principal -->
-        <main class="server-content">
-            <!-- Sección de bienvenida -->
-            <section class="terminal-section">
-                <div class="terminal-line">
-                    <span class="prompt">nisamov@server:~$</span>
-                    <span class="command">cat /etc/motd</span>
-                </div>
-                <div class="terminal-output">
-                    <pre class="ascii-banner">
- /$$   /$$ /$$                                                       
-| $$$ | $$|__/                                                       
-| $$$$| $$ /$$  /$$$$$$$  /$$$$$$  /$$$$$$/$$$$   /$$$$$$  /$$    /$$
-| $$ $$ $$| $$ /$$_____/ |____  $$| $$_  $$_  $$ /$$__  $$|  $$  /$$/
-| $$  $$$$| $$|  $$$$$$   /$$$$$$$| $$ \ $$ \ $$| $$  \ $$ \  $$/$$/ 
-| $$\  $$$| $$ \____  $$ /$$__  $$| $$ | $$ | $$| $$  | $$  \  $$$/  
-| $$ \  $$| $$ /$$$$$$$/|  $$$$$$$| $$ | $$ | $$|  $$$$$$/   \  $/   
-|__/  \__/|__/|_______/  \_______/|__/ |__/ |__/ \______/     \_/    
-                    </pre>
-                    <p class="server-message">Custom Shell / N_OS</p>
-                    <p class="server-subtitle">SysAdmin | Linux Specialist | Network Engineer</p>
-                </div>
-            </section>
-
-            <!-- Información personal -->
-            <section class="terminal-section">
-                <div class="terminal-line">
-                    <span class="prompt">nisamov@server:~$</span>
-                    <span class="command">whoami</span>
-                </div>
-                <div class="terminal-output">
-                    <h3 class="section-title">INFORMACIÓN DEL USUARIO</h3>
-                    <div class="info-grid">
-                        <div class="info-item">
-                            <span class="info-label">USUARIO:</span>
-                            <span class="info-value">Nisamov</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">ROLES:</span>
-                            <span class="info-value">SysAdmin</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">UBICACIÓN:</span>
-                            <span class="info-value">España</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">STATUS:</span>
-                            <span class="info-value active">ACTIVE</span>
-                        </div>
-                    </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            
+            <aside class="lg:col-span-3">
+                <div class="sidebar-sticky text-center lg:text-left">
+                    <a href="https://github.com/Nisamov" target="_blank">
+                        <img src="https://github.com/Nisamov.png" class="w-48 h-48 rounded-full border border-gray-200 mx-auto lg:mx-0 mb-4 shadow-sm hover:opacity-90 transition" alt="Nisamov">
+                    </a>
+                    <h1 class="text-2xl font-bold">Nisamov</h1>
+                    <p class="text-gray-500 text-lg mb-4">@Nisamov</p>
                     
-                    <h4 class="subsection-title">DESCRIPCIÓN</h4>
-                    <p class="description">
-                        Técnico especializado en Sistemas Informáticos y Redes, actualmente cursando ASIR. 
-                        Apasionado por la administración de sistemas Linux, redes y automatización de infraestructuras.
+                    <p class="mb-6 text-sm leading-relaxed text-gray-600">
+                        Apasionado por la documentación técnica y el open source. Especializado en infraestructuras Linux y redes.
                     </p>
-                    
-                    <h4 class="subsection-title">INTERESES PRINCIPALES</h4>
-                    <ul class="interests-list">
-                        <li>Administración de Sistemas Linux (Debian/Ubuntu, RHEL)</li>
-                        <li>Bases de Datos: MySQL</li>
-                        <li>Redes y Comunicaciones</li>
-                        <li>Scripting y Automatización</li>
-                        <li>Virtualización y Contenedores</li>
-                    </ul>
-                </div>
-            </section>
 
-            <!-- Proyectos -->
-            <section class="terminal-section">
-                <div class="terminal-line">
-                    <span class="prompt">nisamov@server:~$</span>
-                    <span class="command">ls -la /repos/</span>
-                </div>
-                <div class="terminal-output">
-                    <h3 class="section-title">REPOSITORIOS DESTACADOS</h3>
-                    
-                    <div class="project">
-                        <div class="project-header">
-                            <span class="project-name">LinuxCommands</span>
-                            <span class="project-date">Última modificación: 2024-01-15</span>
-                        </div>
-                        <div class="project-description">
-                            Repositorio completo de comandos Linux para administradores de sistemas.
-                            Documentación técnica organizada por categorías con ejemplos prácticos.
-                        </div>
-                        <div class="project-tech">
-                            <span class="tech-tag">BASH</span>
-                            <span class="tech-tag">LINUX</span>
-                            <span class="tech-tag">DOCUMENTATION</span>
-                        </div>
-                        <div class="project-link">
-                            <a href="https://github.com/Nisamov/LinuxCommands" target="_blank">
-                                https://github.com/Nisamov/LinuxCommands
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="project">
-                        <div class="project-header">
-                            <span class="project-name">RouterSwitchCommands</span>
-                            <span class="project-date">Última modificación: 2024-01-10</span>
-                        </div>
-                        <div class="project-description">
-                            Guía de comandos para routers y switches Cisco.
-                            Configuración de redes, troubleshooting y mejores prácticas.
-                        </div>
-                        <div class="project-tech">
-                            <span class="tech-tag">NETWORKING</span>
-                            <span class="tech-tag">CISCO</span>
-                            <span class="tech-tag">ROUTING</span>
-                            <span class="tech-tag">SWITCHING</span>
-                        </div>
-                        <div class="project-link">
-                            <a href="https://github.com/Nisamov/RouterSwitchCommands" target="_blank">
-                                https://github.com/Nisamov/RouterSwitchCommands
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="all-projects">
-                        <span>Ver todos los repositorios:</span>
-                        <a href="https://github.com/Nisamov" target="_blank">https://github.com/Nisamov</a>
+                    <div class="flex flex-col pt-2 text-left">
+                        <div class="mb-4 text-[10px] font-black uppercase tracking-[0.15em] text-gray-400 border-b pb-1">Conexiones</div>
+                        <a href="mailto:tu-email@gmail.com" class="social-link"><i class="fa-solid fa-envelope text-red-500 w-5"></i> Gmail</a>
+                        <a href="https://www.linkedin.com/in/nisamov/" target="_blank" class="social-link"><i class="fa-brands fa-linkedin text-[#0077b5] w-5"></i> LinkedIn</a>
+                        <a href="https://x.com/Nisamov_" target="_blank" class="social-link"><i class="fa-brands fa-x-twitter text-black w-5"></i> X</a>
+                        <a href="https://orcid.org/0009-0008-5144-7706" target="_blank" class="social-link"><i class="fa-brands fa-orcid text-[#a6ce39] w-5"></i> ORCID</a>
+                        <a href="https://www.credly.com/users/nisamov" target="_blank" class="social-link"><i class="fa-solid fa-award text-[#ff6200] w-5"></i> Credly</a>
+                        <a href="https://hub.docker.com/u/nisamov" target="_blank" class="social-link"><i class="fa-brands fa-docker text-[#2496ed] w-5"></i> Docker</a>
+                        <a href="https://launchpad.net/~nisamov" target="_blank" class="social-link"><i class="fa-solid fa-rocket text-[#f47421] w-5"></i> Launchpad</a>
                     </div>
                 </div>
-            </section>
+            </aside>
 
-            <!-- Habilidades -->
-            <section class="terminal-section">
-                <div class="terminal-line">
-                    <span class="prompt">nisamov@server:~$</span>
-                    <span class="command">cat /proc/skills</span>
-                </div>
-                <div class="terminal-output">
-                    <h3 class="section-title">HABILIDADES TÉCNICAS</h3>
-                    
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <h4 class="category-title">SISTEMAS OPERATIVOS</h4>
-                            <ul class="skill-list">
-                                <li>Linux (Debian/Ubuntu, RHEL/CentOS)</li>
-                                <li>Windows Server</li>
-                                <li>Administración de Servidores</li>
-                                <li>Shell Scripting (Bash)</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="skill-category">
-                            <h4 class="category-title">REDES</h4>
-                            <ul class="skill-list">
-                                <li>Protocolos TCP/IP</li>
-                                <li>Routing y Switching</li>
-                                <li>Firewalls (iptables, firewalld)</li>
-                                <li>DNS, DHCP, VPN</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="skill-category">
-                            <h4 class="category-title">BASES DE DATOS</h4>
-                            <ul class="skill-list">
-                                <li>MySQL/MariaDB</li>
-                                <li>PostgreSQL</li>
-                                <li>Administración y Backup</li>
-                                <li>Optimización de consultas</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="skill-category">
-                            <h4 class="category-title">HERRAMIENTAS</h4>
-                            <ul class="skill-list">
-                                <li>Docker</li>
-                                <li>Git</li>
-                                <li>SSH</li>
-                                <li>Monitorización (top, htop, netstat)</li>
-                            </ul>
-                        </div>
+            <main class="lg:col-span-9 space-y-8">
+                
+                <section class="bento-card overflow-hidden">
+                    <h3 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">Actividad</h3>
+                    <div class="w-full">
+                        <img src="https://ghchart.rshah.org/0969da/Nisamov" alt="Nisamov's GitHub Contributions" class="w-full h-auto" />
                     </div>
-                </div>
-            </section>
+                </section>
 
-            <!-- Contacto -->
-            <section class="terminal-section">
-                <div class="terminal-line">
-                    <span class="prompt">nisamov@server:~$</span>
-                    <span class="command">netstat -tulpn | grep ESTABLISHED</span>
-                </div>
-                <div class="terminal-output">
-                    <h3 class="section-title">CONEXIONES ACTIVAS</h3>
-                    
-                    <div class="connections-grid">
-                        <div class="connection">
-                            <span class="conn-label">GITHUB:</span>
-                            <a href="https://github.com/Nisamov" target="_blank" class="conn-link">
-                                https://github.com/Nisamov
-                            </a>
-                        </div>
+                <section class="bento-card">
+                    <div class="carousel-container" id="project-expositor">
                         
-                        <div class="connection">
-                            <span class="conn-label">X/TWITTER:</span>
-                            <a href="https://twitter.com/Nisamov_" target="_blank" class="conn-link">
-                                @Nisamov_
+                        <div class="carousel-item active">
+                            <div class="mb-4">
+                                <h3 class="text-2xl font-bold text-blue-600">Linux Commands</h3>
+                                <p class="text-sm text-gray-500 mt-2">Enciclopedia de comandos esenciales y avanzados para administración de sistemas.</p>
+                            </div>
+                            <a href="https://github.com/Nisamov/LinuxCommands" target="_blank" class="w-full max-w-2xl rounded-lg overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                                <img src="assets/img/linuxcommands.png" alt="Linux Commands" class="w-full h-56 object-cover">
                             </a>
                         </div>
-                        
-                        <div class="connection">
-                            <span class="conn-label">LINKEDIN:</span>
-                            <a href="https://linkedin.com/in/Nisamov" target="_blank" class="conn-link">
-                                in/Nisamov
-                            </a>
-                        </div>
-                        
-                        <div class="connection">
-                            <span class="conn-label">CREDLY:</span>
-                            <a href="https://www.credly.com/users/nisamov" target="_blank" class="conn-link">
-                                credly.com/users/nisamov
-                            </a>
-                        </div>
-                        
-                        <div class="connection">
-                            <span class="conn-label">LAUNCHPAD:</span>
-                            <a href="https://launchpad.net/~andresabadias" target="_blank" class="conn-link">
-                                launchpad.net/~andresabadias
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-note">
-                        <span>Para contactar profesionalmente, consultar perfiles en GitHub o LinkedIn.</span>
-                    </div>
-                </div>
-            </section>
 
-            <!-- Footer -->
-            <section class="terminal-section">
-                <div class="terminal-line">
-                    <span class="prompt">nisamov@server:~$</span>
-                    <span class="command">uptime</span>
-                </div>
-                <div class="terminal-output">
-                    <div class="server-footer">
-                        <span>system uptime: 15 days, 7 hours, 23 minutes</span>
-                        <span>load average: 0.12, 0.08, 0.05</span>
-                        <span>last login: Today from terminal</span>
+                        <div class="carousel-item">
+                            <div class="mb-4">
+                                <h3 class="text-2xl font-bold text-green-600">Router & Switch Commands</h3>
+                                <p class="text-sm text-gray-500 mt-2">Guía estructurada para dispositivos de red con ejemplos prácticos.</p>
+                            </div>
+                            <a href="https://github.com/Nisamov/RouterSwitchCommands" target="_blank" class="w-full max-w-2xl rounded-lg overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                                <img src="assets/img/routerswitchcommands.png" alt="Router & Switch Commands" class="w-full h-56 object-cover">
+                            </a>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="mb-4">
+                                <h3 class="text-2xl font-bold text-red-500">SSP (Secure Protocol)</h3>
+                                <p class="text-sm text-gray-500 mt-2">Seguridad automatizada para servicios en Debian/Ubuntu.</p>
+                            </div>
+                            <div class="w-full max-w-2xl bg-gray-900 rounded-lg h-56 flex flex-col items-center justify-center p-6">
+                                <code class="text-green-400 font-mono text-xs mb-4">git clone https://github.com/Nisamov/SSP.git</code>
+                                <i class="fa-solid fa-user-shield text-5xl text-red-400 opacity-40"></i>
+                            </div>
+                        </div>
+
                     </div>
-                    <div class="copyright">
-                        &copy; 2026 Nisamov. Todos los derechos reservados.
+                </section>
+
+                <section class="bento-card">
+                    <div class="flex flex-col md:flex-row gap-6 items-center">
+                        <div class="md:w-2/3">
+                            <h2 class="text-xl font-bold mb-4 italic text-gray-400">Información</h2>
+                            <p class="text-gray-600 leading-relaxed">
+                                Llevo años trasteando con ordenadores, siempre buscaba la forma de tener mi propio entorno, probar cosas y mejorarlas constantemente, eso es lo que me ha definido hasta la fecha. <br><br> Todos los proyectos que he hecho han sido remodelados, siendo mi mayor proyecto LinuxCommands, el cual es una enciclopedia de comandos de Linux, con ejemplos prácticos y explicaciones detalladas, lo recomiendo altamente para entornos educativos.
+                            </p>
+                        </div>
                     </div>
-                </div>
-            </section>
-        </main>
+                </section>
+            </main>
+        </div>
     </div>
 
-    <script src="assets/js/main.js"></script>
+    <footer class="text-center py-10 text-gray-400 text-[10px] tracking-widest uppercase">
+        <p>Perfil Nisamov &copy; 2024</p>
+    </footer>
+
+    <script>
+        const items = document.querySelectorAll('.carousel-item');
+        let currentIndex = 0;
+
+        function showNextProject() {
+            items[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % items.length;
+            items[currentIndex].classList.add('active');
+        }
+
+        setInterval(showNextProject, 5000);
+    </script>
+
 </body>
 </html>
