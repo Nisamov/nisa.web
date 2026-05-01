@@ -1,175 +1,384 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nisamov | Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <style>
-        :root {
-            --gh-border: #d0d7de;
-            --gh-blue: #0969da;
-        }
-        .bento-card {
-            background: white;
-            border: 1px solid var(--gh-border);
-            border-radius: 8px;
-            padding: 24px;
-            transition: all 0.3s ease;
-        }
-        .bento-card:hover {
-            box-shadow: 0 8px 24px rgba(149, 157, 165, 0.2);
-        }
-        .social-link {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 8px 0;
-            color: #444c56;
-            font-size: 0.85rem;
-            transition: color 0.2s;
-        }
-        .social-link:hover { color: var(--gh-blue); }
-        .sidebar-sticky { position: sticky; top: 2rem; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        /* Estilos para el Expositor */
-        .carousel-container {
-            position: relative;
-            height: 400px; /* Altura ajustada para reducir espacio sobrante */
-            overflow: hidden;
-        }
-        .carousel-item {
-            position: absolute;
-            inset: 0;
-            opacity: 0;
-            transition: opacity 0.8s ease-in-out;
-            pointer-events: none;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-        .carousel-item.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-    </style>
+<title>Nisamov | Portfolio Profesional</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root{
+--bg:#f6f8fa;
+--card:#ffffff;
+--line:#d0d7de;
+--text:#24292f;
+--muted:#57606a;
+--blue:#0969da;
+--linkedin:#0a66c2;
+--green:#1a7f37;
+}
+
+html{scroll-behavior:smooth;}
+
+body{
+font-family:Inter,system-ui,-apple-system,sans-serif;
+background:var(--bg);
+color:var(--text);
+}
+
+.panel{
+background:var(--card);
+border:1px solid var(--line);
+border-radius:18px;
+padding:26px;
+transition:.25s ease;
+}
+
+.panel:hover{
+box-shadow:0 14px 30px rgba(0,0,0,.05);
+}
+
+.badge{
+font-size:.75rem;
+padding:6px 11px;
+border-radius:999px;
+background:#eef4ff;
+color:#1e40af;
+font-weight:600;
+}
+
+.side-link{
+display:flex;
+align-items:center;
+gap:12px;
+padding:11px 12px;
+border-radius:12px;
+transition:.2s;
+color:var(--muted);
+}
+
+.side-link:hover{
+background:#f1f5f9;
+color:var(--blue);
+}
+
+.repo{
+border:1px solid var(--line);
+border-radius:14px;
+padding:20px;
+transition:.2s;
+background:white;
+}
+
+.repo:hover{
+transform:translateY(-4px);
+border-color:var(--blue);
+box-shadow:0 10px 25px rgba(0,0,0,.06);
+}
+
+.stat{
+border:1px solid var(--line);
+border-radius:14px;
+padding:18px;
+background:#f8fafc;
+}
+
+.section-title{
+font-size:1.5rem;
+font-weight:800;
+margin-bottom:18px;
+}
+
+.sticky{
+position:sticky;
+top:24px;
+}
+
+.hero{
+background:linear-gradient(135deg,#ffffff,#f0f7ff);
+}
+
+.text-soft{
+color:var(--muted);
+}
+
+.line{
+border-top:1px solid var(--line);
+}
+
+</style>
 </head>
-<body class="p-4 md:p-10 bg-white">
 
-    <div class="max-w-7xl mx-auto">
-        
-        <div class="w-full mb-8 rounded-xl overflow-hidden border border-gray-200 shadow-sm bg-gray-50">
-            <img src="assets/img/nsm.gif" 
-                 class="w-full h-auto block" alt="Banner Animado">
-        </div>
+<body>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-            
-            <aside class="lg:col-span-3">
-                <div class="sidebar-sticky text-center lg:text-left">
-                    <a href="https://github.com/Nisamov" target="_blank">
-                        <img src="https://github.com/Nisamov.png" class="w-48 h-48 rounded-full border border-gray-200 mx-auto lg:mx-0 mb-4 shadow-sm hover:opacity-90 transition" alt="Nisamov">
-                    </a>
-                    <h1 class="text-2xl font-bold">Nisamov</h1>
-                    <p class="text-gray-500 text-lg mb-4">@Nisamov</p>
-                    
-                    <p class="mb-6 text-sm leading-relaxed text-gray-600">
-                        Apasionado por la documentación técnica y el open source. Especializado en infraestructuras Linux y redes.
-                    </p>
+<!-- HEADER -->
+<header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
-                    <div class="flex flex-col pt-2 text-left">
-                        <div class="mb-4 text-[10px] font-black uppercase tracking-[0.15em] text-gray-400 border-b pb-1">Conexiones</div>
-                        <a href="mailto:tu-email@gmail.com" class="social-link"><i class="fa-solid fa-envelope text-red-500 w-5"></i> Gmail</a>
-                        <a href="https://www.linkedin.com/in/nisamov/" target="_blank" class="social-link"><i class="fa-brands fa-linkedin text-[#0077b5] w-5"></i> LinkedIn</a>
-                        <a href="https://x.com/Nisamov_" target="_blank" class="social-link"><i class="fa-brands fa-x-twitter text-black w-5"></i> X</a>
-                        <a href="https://orcid.org/0009-0008-5144-7706" target="_blank" class="social-link"><i class="fa-brands fa-orcid text-[#a6ce39] w-5"></i> ORCID</a>
-                        <a href="https://www.credly.com/users/nisamov" target="_blank" class="social-link"><i class="fa-solid fa-award text-[#ff6200] w-5"></i> Credly</a>
-                        <a href="https://hub.docker.com/u/nisamov" target="_blank" class="social-link"><i class="fa-brands fa-docker text-[#2496ed] w-5"></i> Docker</a>
-                        <a href="https://launchpad.net/~nisamov" target="_blank" class="social-link"><i class="fa-solid fa-rocket text-[#f47421] w-5"></i> Launchpad</a>
-                        <a href="https://github.com/Nisamov" target="_blank" class="social-link"><i class="fa-brands fa-github text-black w-5"></i> Github</a>
-                        <a href="https://gist.github.com/Nisamov" target="_blank" class="social-link"><i class="fa-brands fa-github text-[#0969da] w-5"></i> Gist</a>
-                        <a href="https://stackoverflow.com/users/25016143/nisamov" target="_blank" class="social-link"><i class="fa-brands fa-stack-overflow text-[#f48024] w-5"></i> Stack Overflow</a>
-                    </div>
-                </div>
-            </aside>
+<div class="flex items-center gap-3">
+<img src="https://github.com/Nisamov.png" class="w-10 h-10 rounded-xl">
+<div>
+<h1 class="font-bold">Nisamov</h1>
+<p class="text-xs text-gray-500">Técnico en Sistemas Microinformáticos y Redes</p>
+</div>
+</div>
 
-            <main class="lg:col-span-9 space-y-8">
-                
-                <section class="bento-card overflow-hidden">
-                    <h3 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">Actividad</h3>
-                    <div class="w-full">
-                        <img src="https://ghchart.rshah.org/0969da/Nisamov" alt="Nisamov's GitHub Contributions" class="w-full h-auto" />
-                    </div>
-                </section>
+<nav class="hidden md:flex gap-6 text-sm font-medium text-gray-600">
+<a href="#info" class="hover:text-blue-600">Información</a>
+<a href="#skills" class="hover:text-blue-600">Aptitudes</a>
+<a href="#projects" class="hover:text-blue-600">Proyectos</a>
+<a href="#activity" class="hover:text-blue-600">Actividad</a>
+</nav>
 
-                <section class="bento-card">
-                    <div class="carousel-container" id="project-expositor">
-                        
-                        <div class="carousel-item active">
-                            <div class="mb-4">
-                                <h3 class="text-2xl font-bold text-blue-600">Linux Commands</h3>
-                                <p class="text-sm text-gray-500 mt-2">Enciclopedia de comandos esenciales y avanzados para administración de sistemas.</p>
-                            </div>
-                            <a href="https://github.com/Nisamov/LinuxCommands" target="_blank" class="w-full max-w-2xl rounded-lg overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                                <img src="assets/img/linuxcommands.png" alt="Linux Commands" class="w-full h-56 object-cover">
-                            </a>
-                        </div>
+</div>
+</header>
 
-                        <div class="carousel-item">
-                            <div class="mb-4">
-                                <h3 class="text-2xl font-bold text-green-600">Router & Switch Commands</h3>
-                                <p class="text-sm text-gray-500 mt-2">Guía estructurada para dispositivos de red con ejemplos prácticos.</p>
-                            </div>
-                            <a href="https://github.com/Nisamov/RouterSwitchCommands" target="_blank" class="w-full max-w-2xl rounded-lg overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                                <img src="assets/img/RouterSwitchCommands.png" alt="Router & Switch Commands" class="w-full h-56 object-cover">
-                            </a>
-                        </div>
+<!-- BODY -->
+<div class="max-w-7xl mx-auto px-6 py-10">
 
-                        <div class="carousel-item">
-                            <div class="mb-4">
-                                <h3 class="text-2xl font-bold text-red-500">Victrix (.deb Service)</h3>
-                                <p class="text-sm text-gray-500 mt-2">Servicio Personal para Debian/Ubuntu.</p>
-                            </div>
-                            <a href="https://github.com/Nisamov/victrix" target="_blank" class="w-full max-w-2xl rounded-lg overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                                <img src="assets/img/victrix.png" alt="Linux Commands" class="w-full h-56 object-cover">
-                            </a>
-                        </div>
+<div class="grid lg:grid-cols-12 gap-8">
 
-                    </div>
-                </section>
+<!-- SIDEBAR -->
+<aside class="lg:col-span-4">
+<div class="sticky space-y-6">
 
-                <section class="bento-card">
-                    <div class="flex flex-col md:flex-row gap-6 items-center">
-                        <div class="md:w-2/3">
-                            <h2 class="text-xl font-bold mb-4 italic text-gray-400">Información</h2>
-                            <p class="text-gray-600 leading-relaxed">
-                                Llevo años trasteando con ordenadores, siempre buscaba la forma de tener mi propio entorno, probar cosas y mejorarlas constantemente, eso es lo que me ha definido hasta la fecha. <br><br> Todos los proyectos que he hecho han sido remodelados, siendo mi mayor proyecto LinuxCommands, el cual es una enciclopedia de comandos de Linux, con ejemplos prácticos y explicaciones detalladas, lo recomiendo altamente para entornos educativos.
-                            </p>
-                        </div>
-                    </div>
-                </section>
-            </main>
-        </div>
-    </div>
+<!-- PROFILE -->
+<section class="panel text-center">
+<img src="https://github.com/Nisamov.png"
+class="w-32 h-32 rounded-2xl mx-auto mb-5">
 
-    <footer class="text-center py-10 text-gray-400 text-[10px] tracking-widest uppercase">
-        <p>Perfil Nisamov</p>
-    </footer>
+<h2 class="text-2xl font-bold">Nisamov</h2>
+<p class="text-soft">@Nisamov</p>
 
-    <script>
-        const items = document.querySelectorAll('.carousel-item');
-        let currentIndex = 0;
+<div class="line mt-6 pt-4 space-y-1 text-left">
 
-        function showNextProject() {
-            items[currentIndex].classList.remove('active');
-            currentIndex = (currentIndex + 1) % items.length;
-            items[currentIndex].classList.add('active');
-        }
+<a href="mailto:tu-email@gmail.com" class="side-link">
+<i class="fa-solid fa-envelope text-red-500 w-5"></i>Email
+</a>
 
-        setInterval(showNextProject, 5000);
-    </script>
+<a href="https://github.com/Nisamov" target="_blank" class="side-link">
+<i class="fa-brands fa-github w-5"></i>GitHub
+</a>
+
+<a href="https://www.linkedin.com/in/nisamov/" target="_blank" class="side-link">
+<i class="fa-brands fa-linkedin text-[#0a66c2] w-5"></i>LinkedIn
+</a>
+
+<a href="https://hub.docker.com/u/nisamov" target="_blank" class="side-link">
+<i class="fa-brands fa-docker text-blue-500 w-5"></i>Docker Hub
+</a>
+
+<a href="https://www.credly.com/users/nisamov" target="_blank" class="side-link">
+<i class="fa-solid fa-award text-orange-500 w-5"></i>Credly
+</a>
+
+<a href="https://stackoverflow.com/users/25016143/nisamov" target="_blank" class="side-link">
+<i class="fa-brands fa-stack-overflow text-orange-500 w-5"></i>StackOverflow
+</a>
+
+<a href="https://gist.github.com/Nisamov" target="_blank" class="side-link">
+<i class="fa-solid fa-code w-5"></i>Gists
+</a>
+
+<a href="https://orcid.org/0009-0008-5144-7706" target="_blank" class="side-link">
+<i class="fa-brands fa-orcid text-green-500 w-5"></i>ORCID
+</a>
+
+</div>
+</section>
+
+<!-- STACK -->
+<section class="panel">
+<h3 class="font-bold mb-4">Tecnologías</h3>
+
+<div class="flex flex-wrap gap-2">
+<span class="badge">Linux</span>
+<span class="badge">Debian</span>
+<span class="badge">Docker</span>
+<span class="badge">Networking</span>
+<span class="badge">DNS</span>
+<span class="badge">Shell</span>
+<span class="badge">Git</span>
+<span class="badge">Markdown</span>
+<span class="badge">Open Source</span>
+</div>
+</section>
+
+</div>
+</aside>
+
+<!-- MAIN -->
+<main class="lg:col-span-8 space-y-8">
+
+<!-- HERO -->
+<section class="panel hero">
+<h2 class="text-3xl font-black mb-3">
+Systems Engineer • Linux • Open Source
+</h2>
+
+<p class="text-gray-600 text-lg leading-relaxed">
+Construyo soluciones técnicas centradas en Linux, documentación profesional,
+infraestructura moderna y proyectos de código abierto.
+</p>
+
+<div class="grid md:grid-cols-3 gap-4 mt-6">
+
+<div class="stat">
+<p class="text-sm text-gray-500">Especialización</p>
+<h3 class="font-bold mt-1">Linux Systems</h3>
+</div>
+
+<div class="stat">
+<p class="text-sm text-gray-500">Enfoque</p>
+<h3 class="font-bold mt-1">Infrastructure</h3>
+</div>
+
+<div class="stat">
+<p class="text-sm text-gray-500">Perfil</p>
+<h3 class="font-bold mt-1">Technical Builder</h3>
+</div>
+
+</div>
+</section>
+
+<!-- INFO -->
+<section id="info" class="panel">
+<h2 class="section-title">Información</h2>
+
+<p class="text-gray-600 leading-relaxed">
+Técnico en Sistemas Microinformáticos y Redes con experiencia práctica en administración de sistemas Linux, infraestructura y tecnologías de red.
+</p>
+
+<p class="text-gray-600 leading-relaxed mt-4">
+Mi trabajo se orienta al desarrollo de documentación técnica y herramientas de apoyo que facilitan tanto el aprendizaje como el trabajo diario de administradores de sistemas y profesionales IT.
+</p>
+
+<p class="text-gray-600 leading-relaxed mt-4">
+He desarrollado proyectos open source como <strong>LinuxCommands</strong>, una base de conocimiento avanzada para Linux, y <strong>Router & Switch Commands</strong>, orientado a dispositivos de red.
+</p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="panel">
+<h2 class="section-title">Conocimiento y Aptitudes</h2>
+
+<div class="grid md:grid-cols-2 gap-5">
+
+<div class="repo">
+<h3 class="font-bold mb-3">Sistemas Operativos</h3>
+<div class="flex flex-wrap gap-2">
+<span class="badge">Linux</span>
+<span class="badge">Windows</span>
+<span class="badge">Debian</span>
+</div>
+</div>
+
+<div class="repo">
+<h3 class="font-bold mb-3">Infraestructura</h3>
+<div class="flex flex-wrap gap-2">
+<span class="badge">Docker</span>
+<span class="badge">Deploy</span>
+<span class="badge">Automatización</span>
+<span class="badge">Servicios</span>
+</div>
+</div>
+
+<div class="repo">
+<h3 class="font-bold mb-3">Redes</h3>
+<div class="flex flex-wrap gap-2">
+<span class="badge">DNS</span>
+<span class="badge">CNAME</span>
+<span class="badge">Routing</span>
+<span class="badge">Switching</span>
+</div>
+</div>
+
+<div class="repo">
+<h3 class="font-bold mb-3">Documentación Técnica</h3>
+<div class="flex flex-wrap gap-2">
+<span class="badge">Markdown</span>
+<span class="badge">Guides</span>
+<span class="badge">Knowledge Base</span>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="panel">
+<h2 class="section-title">Proyectos Destacados</h2>
+
+<div class="grid md:grid-cols-2 gap-5">
+
+<div class="repo">
+<h3 class="font-bold text-lg mb-2">LinuxCommands</h3>
+<p class="text-sm text-gray-600 mb-4">
+Enciclopedia estructurada de comandos Linux y servicios.
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="badge">Linux</span>
+<span class="badge">CLI</span>
+<span class="badge">Docs</span>
+</div>
+</div>
+
+<div class="repo">
+<h3 class="font-bold text-lg mb-2">RouterSwitchCommands</h3>
+<p class="text-sm text-gray-600 mb-4">
+Guía práctica para configuración de red.
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="badge">Networking</span>
+<span class="badge">Cisco</span>
+</div>
+</div>
+
+<div class="repo">
+<h3 class="font-bold text-lg mb-2">Victrix</h3>
+<p class="text-sm text-gray-600 mb-4">
+Servicio personalizado para Debian y Ubuntu.
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="badge">Debian</span>
+<span class="badge">Ubuntu</span>
+</div>
+</div>
+
+<div class="repo">
+<h3 class="font-bold text-lg mb-2">Hikarune</h3>
+<p class="text-sm text-gray-600 mb-4">
+Infraestructura moderna con Docker, DNS y Linux.
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="badge">Docker</span>
+<span class="badge">DNS</span>
+<span class="badge">CNAME</span>
+<span class="badge">Linux</span>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- ACTIVITY -->
+<section id="activity" class="panel">
+<h2 class="section-title">Actividad GitHub</h2>
+
+<img src="https://ghchart.rshah.org/0969da/Nisamov" class="w-full rounded-xl">
+</section>
+
+</main>
+
+</div>
+</div>
+
+<footer class="text-center py-10 text-sm text-gray-500">
+© 2026 Nisamov • Portfolio Profesional
+</footer>
 
 </body>
 </html>
